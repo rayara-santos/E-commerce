@@ -1,0 +1,55 @@
+Autor do Documento: Rayara Santos
+URL: "https://www.amazon.com.br/"
+
+######### Caso de Teste 1 
+Objetivo: Realizar uma compra no site Amazon - Diretamente da página do produto
+Pré-requisito: Ter cadastro
+
+Passos      |     Descrição                     |   Entrada do Dado     |    Saída do dado
+ 1          |   Pesquisar produto               |   Item desejado       |    Lista com todos os itens correspondente ao item informado
+ 2          |   Comprar produto diretamente     |        -              |    Então ele deverá ser redirecionado
+
+## usando Gherkin 
+Cenário: Pesquisar produto
+    Dado que o usuário esteja procurando um item especifico 
+    Quando ele informar o item 
+    E clicar na lupa
+    Então deverá ser listado todos os itens correspondente ao item informado
+
+
+Cenário: Comprar produto diretamente 
+    Dado que o usuário localizou o item desejado
+    Quando ele clicar no item
+    E clicar em "Comprar agora"
+    Então ele deverá ser redirecionado para a tela de Login
+    E somente então ele deverá ser redirecionado para a tela de Finalizar compra
+
+
+######### Caso de Teste 2 
+Objetivo: Realizar uma compra no site Amazon - Produtos no carrinho
+Pré-requisito: Ter cadastro
+
+Passos      |     Descrição                     |   Entrada do Dado     |    Saída do dado
+ 1          |   Pesquisar produto               |   Item desejado       |    Lista com todos os itens correspondente ao item informado
+ 2          |   Adicionar produto - Carrinho    |        -              |    Então ele deverá ser redirecionado
+ 3          |   Finalizar compra - Carrinho     |        -              |    Dados protegidos
+
+## usando Gherkin 
+
+Cenário: Pesquisar produto
+    Dado que o usuário esteja procurando um item especifico 
+    Quando ele informar o item 
+    E clicar na lupa
+    Então deverá ser listado todos os itens correspondente ao item informado
+
+Cenário: Adicionar produto - Carrinho 
+    Dado que o usuário achou o item desejado
+    Quando ele clicar no item
+    E clicar em "Adicionar ao carrinho"
+    Então ele deverá ser redirecionado para a tela de resumo com o último item adicionado e Subtotal com tudo do carrinho
+
+Cenário: Finalizar compra - Carrinho
+    Dado que o usuário esteja no resumo do carrinho
+    Quando clicar em "Fechar pedido (x produto)
+    Então ele deverá ser redirecionado para a tela de de Login
+    E somente então ele deverá ser redirecionado para a tela de Finalizar compra
